@@ -1,0 +1,25 @@
+// Try drawing by code!
+Paper 100
+Pen 0
+
+Line 19 91 0 70
+Line 0 70 39 91
+Line 19 91 39 91
+Line 39 91 73 68
+Line 73 68 73 50
+Line 73 50 46 50
+Line 46 50 25 83
+Line 69 71 89 97
+Line 89 97 85 62
+Line 89 97 100 81
+Line 100 81 88 86
+Line 85 62 95 62
+Line 95 54 95 62
+Line 95 54 91 53
+Line 91 53 93 55 
+Line 95 54 89 60
+Line 89 60 73 68
+Line 89 60 46 31
+Line 30 0 55 50
+Line 30 0 61 22
+Line 61 22 58 39
