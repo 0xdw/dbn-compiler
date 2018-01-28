@@ -66,10 +66,13 @@ Parser::AST Parser::parse(token_stream tokens) {
                     argument = tokens[this->m_offset++];
                 } while (argument.value != NEW_LINE);
                 
-                if (exp.arguments.size() < 4) {
-                    this->parse_error("Unexpected number of arguments for Line keyword.");
-                }
+                if (exp.arguments.size() < 4) this->parse_error("Unexpected number of arguments for Line keyword.");
                 ast.body.push_back(exp);
+            } else {
+                if (current_token.value == NEW_LINE) continue;
+                std::string msg = "Unexpected keyword " + current_token.value;
+                this->parse_error(msg.c_str());
+                break;
             }
         }
 
