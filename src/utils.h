@@ -12,9 +12,8 @@ namespace Utils {
 
     template <const char* str>
     const char* exactly(const char* src) {
-        if (str == 0) return 0;
+        if (str == 0 || src == 0) return 0;
         const char* pre = str;
-        if (src == 0) return 0;
         while (*pre && *pre == *src) ++pre, ++src;
         return *pre == 0 ? src : 0;
     }
