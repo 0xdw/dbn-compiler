@@ -12,9 +12,7 @@ const std::string get_file_content(const char* file_name) {
     std::ifstream file(file_name);
 
     if (file.is_open()) {
-        while (std::getline(file, line)) {
-            out += line + "\n";
-        }
+        while (std::getline(file, line)) out += line + "\n";
         file.close();
         return out;
     }

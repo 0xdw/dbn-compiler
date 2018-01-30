@@ -1,4 +1,5 @@
 #include <iostream>
+#include "constants.h"
 #include "compiler.h"
 #include "lexer.h"
 
@@ -11,6 +12,7 @@ void DBNCompiler::compile(const char* source) {
 		this->compiled_source = this->generate(this->transform(this->parse(this->tokenize(source))));
 	} catch (...) {
 		std::cout << "Compilation failed." << std::endl;
+		EXIT
 	}
 }
 

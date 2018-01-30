@@ -49,7 +49,9 @@ const char* Lexer::get_token(const char* src) {
 }
 
 void Lexer::mk_token(std::vector<Lexer::Token>& tokens, Lexer::Token token) {
+    // analyze token
     this->analyze_valid_kwd(this->current_token.c_str());
+    // consume token
     this->tokens.push_back(token);
 }
 

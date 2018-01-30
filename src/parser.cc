@@ -5,7 +5,6 @@
 Parser::Parser() { }
 Parser::~Parser() { }
 
-
 Parser::AST Parser::parse(token_stream tokens) {
     // optimize tokens for parser by adding new lines
     this->optimize_tokens(tokens);

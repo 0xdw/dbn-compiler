@@ -8,3 +8,9 @@ The DBN compiler translates DBN source into [SVG](https://en.wikipedia.org/wiki/
 
 ## Compiler command line
 `$ dbn compile sample.dbn compiled.svg`
+
+## License
+
+Copyright 2018 Dinindu D. Wanniarachchi
+
+Licensed under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0), Version 2.0.
