@@ -7,7 +7,7 @@ BEGIN
   BEGIN
     BLOCK "080904E4"
     BEGIN
-      VALUE "CompanyName", "Dinindu D. Wanniarachchi"
+      VALUE "CompanyName", "DBN Compiler"
       VALUE "FileDescription", "C/C++ implementation of DBN (Design By Numbers) Compiler."
       VALUE "FileVersion", "1.0"
       VALUE "InternalName", "DBN Compiler"
