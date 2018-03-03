@@ -1,7 +1,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#define EXIT exit(1);
+#define EXIT system("pause"); exit(1);
 #define DRAWING "Drawing"
 #define CALL_EXPRESSION "CallExpression"
 #define NUMBER_LITERAL "NumberLiteral"

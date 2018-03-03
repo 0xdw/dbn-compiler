@@ -4,6 +4,17 @@
 SyntaxAnalyzer::SyntaxAnalyzer() { }
 SyntaxAnalyzer::~SyntaxAnalyzer() { }
 
+#define DECLARE_ANALYZER(condition) \
+    if (condition) { \
+        while (*kwd) { \
+            if (!Utils::condition(*kwd)) { \
+                this->syntax_error("Unexpected indentifier ", pre, this->column, this->line); \
+                break; \
+            } \
+            kwd++; \
+        } \
+    }
+
 // analyze one character type
 void SyntaxAnalyzer::analyze_char(const char chr) {
     if (!Utils::is_alpha(chr) && !Utils::is_digit(chr)) {
@@ -22,25 +33,27 @@ void SyntaxAnalyzer::analyze_valid_kwd(const char* kwd) {
     bool is_digit = Utils::is_digit(*kwd);
     const char* pre = kwd;
 
-    if (is_alpha) {
-        while (*kwd) {
-            if (!Utils::is_alpha(*kwd)) {
-                this->syntax_error("Unexpected indentifier ", pre, this->column, this->line);
-                break;
-            }
-            kwd++;
-        }
-    }
+    DECLARE_ANALYZER(is_alpha)
+    DECLARE_ANALYZER(is_digit)
+    // if (is_alpha) {
+    //     while (*kwd) {
+    //         if (!Utils::is_alpha(*kwd)) {
+    //             this->syntax_error("Unexpected indentifier ", pre, this->column, this->line);
+    //             break;
+    //         }
+    //         kwd++;
+    //     }
+    // }
 
-    if (is_digit) {
-        while (*kwd) {
-            if (!Utils::is_digit(*kwd)) {
-                this->syntax_error("Unexpected indentifier ", pre, this->column, this->line);
-                break;
-            }
-            kwd++;
-        }
-    }
+    // if (is_digit) {
+    //     while (*kwd) {
+    //         if (!Utils::is_digit(*kwd)) {
+    //             this->syntax_error("Unexpected indentifier ", pre, this->column, this->line);
+    //             break;
+    //         }
+    //         kwd++;
+    //     }
+    // }
 }
 
 void SyntaxAnalyzer::analyze_range(const char* kwd, const char* value) {
