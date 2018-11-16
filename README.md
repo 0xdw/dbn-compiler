@@ -1,6 +1,6 @@
+# DBN Compiler
 > This repository is no longer maintained and has been moved to https://github.com/ceydigital/dbn-compiler.
 
-# DBN Compiler
 C/C++ implementation of DBN ([Design By Numbers](http://dbn.media.mit.edu/)) Compiler.
 
 Some features are still in progress.
